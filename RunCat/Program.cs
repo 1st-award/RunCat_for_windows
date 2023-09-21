@@ -93,6 +93,14 @@ namespace RunCat
                 new ToolStripMenuItem("Horse", null, SetRunner)
                 {
                     Checked = runner.Equals("horse")
+                },
+                new ToolStripMenuItem("Tabi", null, SetRunner)
+                {
+                    Checked = runner.Equals("tabi")
+                },
+                 new ToolStripMenuItem("Bbung", null, SetRunner)
+                {
+                    Checked = runner.Equals("bbung")
                 }
             });
 
@@ -221,9 +229,18 @@ namespace RunCat
             {
                 capacity = 14;
             }
+            else if (runner.Equals("tabi"))
+            {
+                capacity = 15;
+            }
+            else if (runner.Equals("bbung"))
+            {
+                capacity = 12;
+            }
             List<Icon> list = new List<Icon>(capacity);
             for (int i = 0; i < capacity; i++)
             {
+                // Debug.WriteLine($"{prefix}_{runner}_{i}");
                 list.Add((Icon)rm.GetObject($"{prefix}_{runner}_{i}"));
             }
             icons = list.ToArray();
